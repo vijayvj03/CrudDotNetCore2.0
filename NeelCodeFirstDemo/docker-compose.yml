@@ -1,0 +1,12 @@
+﻿version: "3"
+services:
+    web:
+        build: .
+        ports:
+            - "8000:3000"
+        command:bash -c "dotnet ef database --verbose"
+        depends_on:
+            - db
+    db:
+        image: "microsoft/mssql-server-linux"
+        container_name: test01
