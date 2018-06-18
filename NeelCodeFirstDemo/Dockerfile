@@ -1,12 +1,8 @@
-from microsoft/dotnet:latest
-copy . app
-workdir /app
-
-run dotnet restore
-run dotnet build
-
-expose 8000
-ENV ASPNETCORE_URLS http://*:8000
-ENV ASPNETCORE_ENVIRONMENT docker
-
-ENTRYPOINT dotnet run
+FROM microsoft/aspnetcore-build:
+COPY . /app
+WORKDIR /app
+RUN ["dotnet", "restore"]
+RUN ["dotnet", "build"]
+EXPOSE 5040/tcp
+RUN chmod +x ./entrypoint.sh
+CMD /bin/bash ./entrypoint.sh
