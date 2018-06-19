@@ -24,7 +24,7 @@ namespace NeelCodeFirstDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var connection = @"Server=db;Database=CodeFirstCodeDb;User=sa;Password=Rocklin123;";
+            var connection = @"Server=db;Database=database;User=sa;Password=Rocklin123;";
             //var connection = @"Server=.\SQL2012;Database=CodeFirstCodeDb;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<EmployeeContext>(options => options.UseSqlServer(connection));
         }
