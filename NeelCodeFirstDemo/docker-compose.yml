@@ -1,11 +1,13 @@
 ﻿version: "3"
 services:
     web:
-        build: .
-        ports:
-            - "8000:80"
-        network_mode: "host"
-        depends_on:
+         build:
+            context: .
+            dockerfile: web-app/Dockerfile
+         ports:
+       - 8000:80
+         network_mode: "host"
+         depends_on:
             - db
     db:
         image: "microsoft/mssql-server-linux"
