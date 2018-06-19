@@ -1,9 +1,9 @@
-FROM microsoft/aspnetcore:2.0
+FROM microsoft/dotnet:latest
 COPY . app
 WORKDIR /app
 RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
-EXPOSE 80/tcp
+EXPOSE 5040/tcp
 RUN chmod +x ./entrypoint.sh
 CMD /bin/bash ./entrypoint.sh
 
