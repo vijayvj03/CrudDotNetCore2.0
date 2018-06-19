@@ -4,13 +4,13 @@ services:
       build: dotnet
       ports:
         - "8000:80"
-         - "443;443"
+        - "443;443"
       links:
         - db      
   db:
     image: mysql:5.7
     volumes:
-     - /var/lib/mysql
+      - /var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=Rocklin123
-     - MYSQL_DATABASE=database
+      - MYSQL_DATABASE=database
