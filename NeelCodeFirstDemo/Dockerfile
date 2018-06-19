@@ -1,4 +1,4 @@
-FROM FROM microsoft/aspnetcore:latest
+FROM microsoft/aspnetcore:latest
 COPY . app
 WORKDIR /app
 RUN ["dotnet", "restore"]
