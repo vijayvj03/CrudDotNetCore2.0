@@ -1,9 +1,7 @@
 ﻿version: "3"
 services:
     web:
-         build:
-            context: .
-            dockerfile: web-app/Dockerfile
+         build: .
          ports:
             - "8000:80"
          network_mode: "host"
