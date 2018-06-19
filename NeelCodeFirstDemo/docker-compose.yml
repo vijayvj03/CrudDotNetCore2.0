@@ -7,7 +7,7 @@ services:
        - "443:443"
      links:
        - db
-      network_mode: "host"
+     network_mode: "host"
   db:
     image: mysql:5.7
     volumes:
